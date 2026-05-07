@@ -1,10 +1,10 @@
 # Shopizer 3 (for java 17 +) (tested with Java 11, 17)
 
-3.2.7
+4.0.0
 
 
 
-[![last_version](https://img.shields.io/badge/last_version-v3.2.7-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/3.2.7)
+[![last_version](https://img.shields.io/badge/last_version-v4.0.0-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/4.0.0)
 [![Official site](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=official%20site)](http://www.shopizer.com/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/shopizerecomm/shopizer.svg)](https://hub.docker.com/r/shopizerecomm/shopizer)
 [![stackoverflow](https://img.shields.io/badge/shopizer-stackoverflow-orange.svg?style=flat)](http://stackoverflow.com/questions/tagged/shopizer)
