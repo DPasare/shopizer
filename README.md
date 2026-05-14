@@ -74,18 +74,23 @@ Clone the repository:
 	 $ git clone git://github.com/shopizer-ecommerce/shopizer.git
 	 
 
-To build the application:
+To build and start the backend:
 -------------------
 
-1. Shopizer backend
+1. From the repository root:
 
+	$ ./mvnw clean install
 
-From the command line:
+2. Start the Shopizer backend module:
 
-	$ cd shopizer
-	$ mvnw clean install
 	$ cd sm-shop
-	$ mvnw spring-boot:run
+	$ ./mvnw spring-boot:run
+
+   On Windows, use:
+
+	$ mvnw.cmd clean install
+	$ cd sm-shop
+	$ mvnw.cmd spring-boot:run
 
 2. Shopizer admin
 
