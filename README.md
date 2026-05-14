@@ -1,10 +1,10 @@
 # Shopizer 3 (for java 17 +) (tested with Java 11, 17)
 
-3.2.7
+3.5.0
 
 
 
-[![last_version](https://img.shields.io/badge/last_version-v3.2.7-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/3.2.7)
+[![last_version](https://img.shields.io/badge/last_version-v3.5.0-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/3.5.0)
 [![Official site](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=official%20site)](http://www.shopizer.com/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/shopizerecomm/shopizer.svg)](https://hub.docker.com/r/shopizerecomm/shopizer)
 [![stackoverflow](https://img.shields.io/badge/shopizer-stackoverflow-orange.svg?style=flat)](http://stackoverflow.com/questions/tagged/shopizer)
@@ -74,18 +74,23 @@ Clone the repository:
 	 $ git clone git://github.com/shopizer-ecommerce/shopizer.git
 	 
 
-To build the application:
+To build and start the backend:
 -------------------
 
-1. Shopizer backend
+1. From the repository root:
 
+	$ ./mvnw clean install
 
-From the command line:
+2. Start the Shopizer backend module:
 
-	$ cd shopizer
-	$ mvnw clean install
 	$ cd sm-shop
-	$ mvnw spring-boot:run
+	$ ./mvnw spring-boot:run
+
+   On Windows, use:
+
+	$ mvnw.cmd clean install
+	$ cd sm-shop
+	$ mvnw.cmd spring-boot:run
 
 2. Shopizer admin
 
