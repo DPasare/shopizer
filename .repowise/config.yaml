@@ -1,0 +1,12 @@
+commit_limit: 100
+editor_files:
+  claude_md: false
+provider: openai
+model: gpt-oss-20b
+embedder: openai
+exclude_patterns:
+- target/**
+- '**/target/**'
+- .repowise/**
+- target/**
+- '**/target/**'

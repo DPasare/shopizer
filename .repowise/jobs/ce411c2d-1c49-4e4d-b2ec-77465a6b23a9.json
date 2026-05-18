@@ -1,0 +1,32 @@
+{
+  "job_id": "ce411c2d-1c49-4e4d-b2ec-77465a6b23a9",
+  "status": "running",
+  "created_at": "2026-05-14T17:34:26.962980+00:00",
+  "updated_at": "2026-05-14T17:34:31.170333+00:00",
+  "repo_path": "/home/dan-rd/2026_POC_AIAGENT_SGASSU/04_Software/shopizer",
+  "config_snapshot": {
+    "max_tokens": 1024,
+    "temperature": 0.3,
+    "token_budget": 3000,
+    "max_concurrency": 1,
+    "cache_enabled": true,
+    "staleness_threshold_days": 7,
+    "expiry_threshold_days": 30,
+    "top_symbol_percentile": 0.1,
+    "file_page_top_percentile": 0.1,
+    "file_page_min_symbols": 1,
+    "max_pages_pct": 0.1,
+    "jobs_dir": ".repowise/jobs",
+    "large_file_source_pct": 0.4,
+    "language": "en"
+  },
+  "total_pages": 219,
+  "completed_pages": 0,
+  "failed_pages": 0,
+  "completed_page_ids": [],
+  "failed_page_ids": [],
+  "error_message": null,
+  "provider_name": "ollama",
+  "model_name": "qwen2.5:7b",
+  "current_level": 2
+}

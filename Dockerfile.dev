@@ -1,0 +1,17 @@
+# Stage 1: Build Shopizer from source using Maven
+FROM maven:3.9-eclipse-temurin-11-alpine AS builder
+WORKDIR /build
+COPY . .
+# Use H2 database.properties from the docker profile so the app has DB config at runtime
+RUN cp sm-shop/src/main/resources/profiles/docker/database.properties \
+       sm-shop/src/main/resources/database.properties
+RUN mvn clean package -DskipTests -pl sm-shop -am -q
+
+# Stage 2: Runtime with JRE only
+FROM eclipse-temurin:11-jre-alpine
+RUN mkdir -p /opt/app /files
+COPY --from=builder /build/sm-shop/target/shopizer.jar /opt/app/shopizer.jar
+COPY --from=builder /build/sm-shop/SALESMANAGER.h2.db /SALESMANAGER.h2.db
+COPY --from=builder /build/sm-shop/files /files
+EXPOSE 8080
+CMD ["java", "-jar", "/opt/app/shopizer.jar"]
