@@ -1,8 +1,6 @@
-# Shopizer 3 (for java 17 +) (tested with Java 11, 17)
+# Shopizer 3.2.7
 
-3.2.7
-
-
+Shopizer is an open-source headless commerce platform for Java-based ecommerce stores. It provides REST APIs and the core services needed to run a catalog, shopping cart, checkout, order, customer, merchant, and user experience.
 
 [![last_version](https://img.shields.io/badge/last_version-v3.2.7-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/3.2.7)
 [![Official site](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=official%20site)](http://www.shopizer.com/)
@@ -10,139 +8,77 @@
 [![stackoverflow](https://img.shields.io/badge/shopizer-stackoverflow-orange.svg?style=flat)](http://stackoverflow.com/questions/tagged/shopizer)
 [![CircleCI](https://circleci.com/gh/shopizer-ecommerce/shopizer.svg?style=svg)](https://circleci.com/gh/shopizer-ecommerce/shopizer)
 
+## What Shopizer includes
 
-Java open source e-commerce software
+- Catalog management
+- Shopping cart and checkout flows
+- Merchant and customer management
+- Order processing
+- User and role management
+- REST APIs documented with Swagger
 
-Headless commerce and Rest api for ecommerce
+## Quick start
 
-- Catalog
-- Shopping cart
-- Checkout
-- Merchant
-- Order
-- Customer
-- User
+The project is a multi-module Maven build. The main runnable application is `sm-shop`, which starts the Spring Boot API on port `8080`.
 
-Shopizer Headless commerce consists of the following components:
+### Prerequisites
 
+- Java 11 is supported by the Docker and CI setup used in this repository.
+- Maven Wrapper (`./mvnw`) is provided and should be used instead of a system Maven install.
 
-Access the headless api: http://localhost:8080/swagger-ui.html
+### Build and run locally
 
-
-See the demo: [**New demo on the way 2025]
--------------------
-Headless demo Available soon
-
-1.  Run from Docker images:
-
-From the command line:
-
+```bash
+./mvnw clean install -DskipTests
+cd sm-shop
+../mvnw spring-boot:run
 ```
+
+Then open the API documentation at:
+
+- `http://localhost:8080/swagger-ui.html`
+
+### Run with Docker
+
+```bash
 docker run -p 8080:8080 shopizerecomm/shopizer:latest
 ```
-       
-2. Run the administration tool
 
-⋅⋅⋅ Requires the java backend to be running
+### Related applications
 
-```
-docker run \
- -e "APP_BASE_URL=http://localhost:8080/api" \
- -p 82:80 shopizerecomm/shopizer-admin
-```
+- Admin app: `shopizerecomm/shopizer-admin`
+- React storefront: `shopizerecomm/shopizer-shop-reactjs`
 
+Both require the Java backend to be running.
 
-3. Run react shop sample site
+## Project structure
 
-⋅⋅⋅ Requires the java backend to be running
+- `sm-core-model/` — shared entities and value objects
+- `sm-core-modules/` — payment, shipping, tax, and search integrations
+- `sm-core/` — business logic and service layer
+- `sm-shop-model/` — REST request/response models
+- `sm-shop/` — Spring Boot app, REST controllers, and security
 
-```
-docker run \
- -e "APP_MERCHANT=DEFAULT"
- -e "APP_BASE_URL=http://localhost:8080"
- -p 80:80 shopizerecomm/shopizer-shop-reactjs
-```
+## Documentation
 
-API documentation:
--------------------
+Additional documentation is available in the repository:
 
+- `docs_functional/` — functional guides and setup notes
+- `docs_technical/` — architecture, development, and integration docs
+- `RELEASE-NOTES.md` — recent release notes
 
-Get the source code:
--------------------
-Clone the repository:
-     
-	 $ git clone git://github.com/shopizer-ecommerce/shopizer.git
-	 
+External resources:
 
-To build the application:
--------------------
+- Shopizer website: <http://www.shopizer.com>
+- Shopizer docs: <https://shopizer-ecommerce.github.io/documentation/>
+- Community Slack: <https://communityinviter.com/apps/shopizer/shopizer>
 
-1. Shopizer backend
+## Contributing
 
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Run the build and relevant tests.
+5. Open a pull request.
 
-From the command line:
-
-	$ cd shopizer
-	$ mvnw clean install
-	$ cd sm-shop
-	$ mvnw spring-boot:run
-
-2. Shopizer admin
-
-Form compiling and running Shopizer admin consult the repo README file
-
-3. Shop sample site
-
-Form compiling and running Shopizer admin consult the repo README file
-
-
-### Access the application:
--------------------
-
-Access the headless web application at: http://localhost:8080/swagger-ui.html
-
-
-The instructions above will let you run the application with default settings and configurations.
-Please read the instructions on how to connect to MySQL, configure an email server and configure other subsystems
-
-
-### Documentation:
--------------------
-
-Documentation available [<https://shopizer-ecommerce.github.io/documentation/>](http://localhost:8080/swagger-ui/index.html)
-
-ChatOps <https://shopizer.slack.com>  - Join our Slack channel <https://communityinviter.com/apps/shopizer/shopizer>
-
-More information is available on shopizer web site here <http://www.shopizer.com>
-
-### Participation:
--------------------
-
-If you have interest in giving feedback or for participating to Shopizer project in any way
-Feel to use the contact form <http://www.shopizer.com/contact.html> and share your email address
-so we can send an invite to our Slack channel
-
-### How to Contribute:
--------------------
-Fork the repository to your GitHub account
-
-Clone from fork repository
--------------------
-
-       $ git clone https://github.com/yourusername/shopizer.git
-
-Build application according to steps provided above
-
-
-Create new branch in your repository
--------------------
-
-	   $ git checkout -b branch-name
-
-
-Push your changes to Shopizer
--------------------
-
-Please open a PR (pull request) in order to have your changes merged to the upstream
-
-
+Please keep changes focused and follow the existing module boundaries when contributing.
